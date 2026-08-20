@@ -17,6 +17,8 @@ export interface QuizQuestion {
   promptImageUrl?: string;
   options: QuizOption[];
   correctOptionId: string;
+  /** Extra detail shown after answering (e.g. team name for flag→city) */
+  correctDetail?: string;
 }
 
 export interface QuizModeDefinition {

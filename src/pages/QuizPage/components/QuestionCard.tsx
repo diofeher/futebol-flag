@@ -58,6 +58,9 @@ export function QuestionCard({
               {!option.imageUrl && (
                 <span className={styles.optionLabel}>{option.label}</span>
               )}
+              {isAnswered && option.imageUrl && (
+                <span className={styles.revealedLabel}>{option.label}</span>
+              )}
             </button>
           );
         })}
@@ -67,7 +70,12 @@ export function QuestionCard({
         <div className={styles.feedback}>
           <p className={styles.feedbackText}>
             {selectedOptionId === question.correctOptionId ? (
-              <span className={styles.correctText}>✅ Correct!</span>
+              <span className={styles.correctText}>
+                ✅ Correct!
+                {question.correctDetail && (
+                  <> — <strong>{question.correctDetail}</strong></>
+                )}
+              </span>
             ) : (
               <span className={styles.wrongText}>
                 ❌ Wrong! The answer was{" "}
@@ -78,6 +86,9 @@ export function QuestionCard({
                     )?.label
                   }
                 </strong>
+                {question.correctDetail && (
+                  <> ({question.correctDetail})</>
+                )}
               </span>
             )}
           </p>

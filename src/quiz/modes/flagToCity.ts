@@ -39,6 +39,7 @@ export const flagToCityMode: QuizModeDefinition = {
       promptImageUrl: team.badgeUrl,
       options,
       correctOptionId: team.id,
+      correctDetail: team.name,
     };
   },
 };
