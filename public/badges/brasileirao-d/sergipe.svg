@@ -5,6 +5,6 @@
       <stop offset="100%" stop-color="#FFFFFF"/>
     </linearGradient>
   </defs>
-  <path d="M50 5 L95 20 L95 60 Q95 100 50 115 Q5 100 5 60 L5 20 Z" fill="url(#g)" stroke="#000000" stroke-width="2"/>
-  <text x="50" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="white" stroke="none" stroke-width="0.5">SER</text>
+  <path d="M50 2L95 25V75C95 95 50 118 50 118S5 95 5 75V25Z" fill="url(#g)" stroke="#333" stroke-width="2"/>
+  <text x="50" y="68" text-anchor="middle" fill="white" font-size="20" font-weight="bold" font-family="Arial">SER</text>
 </svg>
