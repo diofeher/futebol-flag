@@ -7,7 +7,7 @@ A football team badge quiz game. Test your knowledge of club crests from leagues
 ## Features
 
 - **4 Quiz Modes**: Flag→Team, Team→Flag, Flag→City, Year Founded comparison
-- **91 teams** with real SVG badges across 14 leagues (Brazil, Argentina, England, Spain, Italy, Germany, France, Portugal, Netherlands, Mexico, USA, Colombia, Uruguay, Chile)
+- **2600+ teams** with real badges across 46 leagues and 39 countries worldwide
 - **Stats & Streaks**: Best scores, games played, streak tracking (localStorage)
 - **Library**: Filterable card grid of all teams with badges, colors, founding year
 - **Dark mode**: Automatic via `prefers-color-scheme`
@@ -71,14 +71,13 @@ interface Team {
 
 ## Badge Assets
 
-Team badge SVGs are stored in `public/badges/<league-id>/<team-id>.svg`.
+Team badges are stored in `public/badges/<league-id>/<team-id>.<ext>` (SVG or PNG).
 
 ### Sources
 
-- **Primary**: [Wikimedia Commons](https://commons.wikimedia.org/) — SVG logos under various free licenses
-- **Fetch script**: `scripts/fetch-badges.mjs` — downloads from Commons API using direct filename mapping
-- **Search script**: `scripts/fix-missing-badges.mjs` — searches Commons for missing badges
-- **Placeholders**: Shield-shaped SVGs with team colors and abbreviation, auto-generated for any team without a real badge
+- **Primary**: [football-logos.cc](https://football-logos.cc/) — 2500+ PNG badges across 39 countries
+- **Secondary**: [Wikimedia Commons](https://commons.wikimedia.org/) — SVG logos for Brazilian teams
+- **Fetch scripts**: `scripts/fetch-all-football-logos.mjs`, `scripts/fetch-brazilian-badges.mjs`
 
 ### Adding Badges
 

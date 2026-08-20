@@ -9,12 +9,14 @@ export const foundedYearMode: QuizModeDefinition = {
   description: "Which club was founded first?",
 
   generateQuestion(teams: Team[], usedTeamIds: Set<string>): QuizQuestion {
-    const teamA = pickUnusedTeam(teams, usedTeamIds);
+    // Only use teams with known founding year
+    const teamsWithYear = teams.filter(t => t.foundedYear > 0);
+    const teamA = pickUnusedTeam(teamsWithYear, usedTeamIds);
     if (!teamA) throw new Error("No unused teams available");
     usedTeamIds.add(teamA.id);
 
     // Pick a second team with a different founding year
-    const candidates = teams.filter(
+    const candidates = teamsWithYear.filter(
       (t) => !usedTeamIds.has(t.id) && t.foundedYear !== teamA.foundedYear
     );
 
@@ -23,7 +25,7 @@ export const foundedYearMode: QuizModeDefinition = {
       teamB = candidates[Math.floor(Math.random() * candidates.length)];
     } else {
       // Fallback: pick any unused team
-      const fallback = pickUnusedTeam(teams, usedTeamIds);
+      const fallback = pickUnusedTeam(teamsWithYear, usedTeamIds);
       if (!fallback) throw new Error("No second team available");
       teamB = fallback;
     }

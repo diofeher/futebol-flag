@@ -13,12 +13,16 @@ export function TeamCard({ team }: TeamCardProps) {
       <Badge src={team.badgeUrl} alt={`${team.name} badge`} size="lg" />
       <div className={styles.info}>
         <h3 className={styles.name}>{team.name}</h3>
-        <p className={styles.location}>
-          {team.city}, {team.state}
-        </p>
+        {(team.city || team.state) && (
+          <p className={styles.location}>
+            {[team.city, team.state].filter(Boolean).join(", ")}
+          </p>
+        )}
         <div className={styles.meta}>
           <span className={styles.league}>{getLeagueName(team.leagueId)}</span>
-          <span className={styles.year}>Est. {team.foundedYear}</span>
+          {team.foundedYear > 0 && (
+            <span className={styles.year}>Est. {team.foundedYear}</span>
+          )}
         </div>
       </div>
       <div
