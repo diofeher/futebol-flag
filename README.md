@@ -1,4 +1,4 @@
-# ⚽ Futebol Flag
+# ⚽ Futebol Quiz
 
 A football team badge quiz game. Test your knowledge of club crests from leagues worldwide.
 
@@ -7,7 +7,7 @@ A football team badge quiz game. Test your knowledge of club crests from leagues
 ## Features
 
 - **4 Quiz Modes**: Flag→Team, Team→Flag, Flag→City, Year Founded comparison
-- **108+ teams** across 14 leagues (Brazil, Argentina, England, Spain, Italy, Germany, France, Portugal, Netherlands, Mexico, USA, Colombia, Uruguay, Chile)
+- **91 teams** with real SVG badges across 14 leagues (Brazil, Argentina, England, Spain, Italy, Germany, France, Portugal, Netherlands, Mexico, USA, Colombia, Uruguay, Chile)
 - **Stats & Streaks**: Best scores, games played, streak tracking (localStorage)
 - **Library**: Filterable card grid of all teams with badges, colors, founding year
 - **Dark mode**: Automatic via `prefers-color-scheme`

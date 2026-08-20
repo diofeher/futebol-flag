@@ -6,7 +6,7 @@ function badge(leagueId: string, teamId: string): string {
   return `${BASE}badges/${leagueId}/${teamId}.svg`;
 }
 
-export const TEAMS: Team[] = [
+const ALL_TEAMS: Team[] = [
   // ===== BRASILEIRÃO =====
   { id: "flamengo", name: "Flamengo", shortName: "FLA", city: "Rio de Janeiro", state: "Rio de Janeiro", country: "Brazil", leagueId: "brasileirao", foundedYear: 1895, badgeUrl: badge("brasileirao", "flamengo"), colors: ["#B71C1C", "#000000"] },
   { id: "palmeiras", name: "Palmeiras", shortName: "PAL", city: "São Paulo", state: "São Paulo", country: "Brazil", leagueId: "brasileirao", foundedYear: 1914, badgeUrl: badge("brasileirao", "palmeiras"), colors: ["#006400", "#FFFFFF"] },
@@ -271,3 +271,39 @@ export const TEAMS: Team[] = [
   { id: "atlanta-united", name: "Atlanta United", shortName: "ATL", city: "Atlanta", state: "Georgia", country: "USA", leagueId: "mls", foundedYear: 2014, badgeUrl: badge("mls", "atlanta-united"), colors: ["#80000A", "#A19060"] },
   { id: "seattle-sounders", name: "Seattle Sounders", shortName: "SEA", city: "Seattle", state: "Washington", country: "USA", leagueId: "mls", foundedYear: 2007, badgeUrl: badge("mls", "seattle-sounders"), colors: ["#5D9741", "#003DA5"] },
 ];
+
+// Teams without real badge SVGs (placeholder only) — remove ID from set when real badge added
+const PLACEHOLDER_IDS = new Set([
+  // Brasileirão A
+  "sport", "juventude", "mirassol", "rb-bragantino",
+  // Brasileirão B (all)
+  "amazonas", "america-mg", "athletic-mg", "atletico-go", "avai", "botafogo-sp",
+  "chapecoense", "crb", "criciuma", "cuiaba", "ferroviaria", "novorizontino",
+  "operario-pr", "paysandu", "remo", "vila-nova", "volta-redonda",
+  // Brasileirão C (all)
+  "abc", "anapolis", "botafogo-pb", "brusque", "caxias-rs", "confianca", "csa",
+  "figueirense", "floresta", "guarani", "itabaiana", "ituano", "londrina", "maringa",
+  "nautico", "ponte-preta", "retro", "sao-bernardo", "tombense", "ypiranga-rs",
+  // Brasileirão D (all)
+  "tuna-luso", "manauara", "manaus-fc", "independencia-ac", "aguia-maraba", "trem",
+  "gas", "humaita-ac", "altos", "imperatriz", "sampaio-correa", "maranhao-ac",
+  "iguatu", "tocantinopolis", "parnahyba", "maracana-ce", "america-natal",
+  "santa-cruz", "central", "ferroviario-ce", "horizonte", "santa-cruz-natal",
+  "treze", "sousa", "asa", "lagarto", "sergipe", "juazeirense", "uniao-araguaina",
+  "jequie", "barcelona-ilheus", "penedense", "aparecidense", "ceilandia",
+  "luverdense", "mixto", "capital-df", "goiania", "goianesia", "porto-velho",
+  "portuguesa-sp", "rio-branco-es", "agua-santa", "marica", "pouso-alegre",
+  "porto-vitoria", "nova-iguacu", "boavista-rj", "fc-cascavel", "azuriz",
+  "cianorte", "guarany-bage", "brasil-pelotas", "sao-luiz-rs", "sao-jose-rs",
+  "marcilio-dias", "barra-sc", "joinville", "inter-limeira", "uberlandia",
+  "itabirito", "monte-azul", "operario-ms",
+  // Campeonato Paraibano (all)
+  "auto-esporte", "campinense", "nacional-patos", "esporte-patos", "picuiense",
+  "pombal", "serra-branca",
+  // International
+  "tottenham", "aston-villa", "atletico-madrid", "sevilla", "valencia",
+  "villarreal", "real-sociedad", "atalanta", "torino", "olympique-lyon",
+  "lille", "lens", "porto", "vitoria-guimaraes", "psv", "chivas",
+]);
+
+export const TEAMS = ALL_TEAMS.filter(t => !PLACEHOLDER_IDS.has(t.id));

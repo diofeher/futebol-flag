@@ -53,9 +53,11 @@ export function QuestionCard({
               disabled={isAnswered}
             >
               {option.imageUrl && (
-                <Badge src={option.imageUrl} alt={option.label} size="lg" />
+                <Badge src={option.imageUrl} alt="Team badge" size="lg" />
               )}
-              <span className={styles.optionLabel}>{option.label}</span>
+              {!option.imageUrl && (
+                <span className={styles.optionLabel}>{option.label}</span>
+              )}
             </button>
           );
         })}

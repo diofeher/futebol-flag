@@ -20,7 +20,7 @@ export function Header({ currentRoute, onNavigate }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.brand}>
         <span className={styles.logo}>⚽</span>
-        <h1 className={styles.title}>Futebol Flag</h1>
+        <h1 className={styles.title}>Futebol Quiz</h1>
       </div>
 
       <nav className={styles.nav}>
