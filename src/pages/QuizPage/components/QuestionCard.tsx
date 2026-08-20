@@ -26,7 +26,7 @@ export function QuestionCard({
 
       {hasImagePrompt && (
         <div className={styles.promptImage}>
-          <Badge src={question.promptImageUrl!} alt="Team badge" size="xl" />
+          <Badge src={question.promptImageUrl!} alt="Team badge" size="xl" blurred={!isAnswered} />
         </div>
       )}
 
@@ -53,7 +53,7 @@ export function QuestionCard({
               disabled={isAnswered}
             >
               {option.imageUrl && (
-                <Badge src={option.imageUrl} alt="Team badge" size="lg" />
+                <Badge src={option.imageUrl} alt="Team badge" size="lg" blurred={!isAnswered} />
               )}
               {!option.imageUrl && (
                 <span className={styles.optionLabel}>{option.label}</span>
