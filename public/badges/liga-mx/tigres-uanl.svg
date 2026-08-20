@@ -1,10 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#FFD700"/>
-      <stop offset="100%" stop-color="#003087"/>
-    </linearGradient>
-  </defs>
-  <path d="M50 5 L95 20 L95 60 Q95 100 50 115 Q5 100 5 60 L5 20 Z" fill="url(#g)" stroke="#003087" stroke-width="2"/>
-  <text x="50" y="68" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" font-weight="bold" fill="white" stroke="none" stroke-width="0.5">TIG</text>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1"
+	 id="svg2" inkscape:version="0.48.2 r9819" sodipodi:docname="600px America.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 600 400"
+	 style="enable-background:new 0 0 600 400;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFBB00;}
+	.st1{fill:#0033CC;}
+	.st2{opacity:0.5;enable-background:new    ;}
+	.st3{opacity:0.5;fill:#FFFFFF;enable-background:new    ;}
+</style>
+<rect id="rect3003" y="0" class="st0" width="600" height="400"/>
+<rect y="139" class="st1" width="600" height="122"/>
+<path id="path3897" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" class="st2" d="M17,383L0,400h600l-17-17H17z"/>
+<g id="g3904">
+	<g id="g3901">
+		<path id="path3899" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" class="st2" d="M583,17v366l17,17V0L583,17z"/>
+	</g>
+</g>
+<path id="path3908" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" class="st3" d="M0,0l17,17h566l17-17H0z"/>
+<path id="path3910" inkscape:connector-curvature="0" sodipodi:nodetypes="ccccc" class="st3" d="M0,400l15.9-16.7L17,17L0,0V400z"
+	/>
 </svg>

@@ -7,6 +7,10 @@ export function getLeagueName(id: string): string {
 export const LEAGUES: League[] = [
   // Brazil
   { id: "brasileirao", name: "Brasileirão Série A", country: "Brazil", continent: "South America" },
+  { id: "brasileirao-b", name: "Brasileirão Série B", country: "Brazil", continent: "South America" },
+  { id: "brasileirao-c", name: "Brasileirão Série C", country: "Brazil", continent: "South America" },
+  { id: "brasileirao-d", name: "Brasileirão Série D", country: "Brazil", continent: "South America" },
+  { id: "paraibano", name: "Campeonato Paraibano", country: "Brazil", continent: "South America" },
 
   // Argentina
   { id: "liga-profesional", name: "Liga Profesional", country: "Argentina", continent: "South America" },
