@@ -35,7 +35,7 @@ export const flagToCityMode: QuizModeDefinition = {
     return {
       id: generateId(),
       modeId: "flag-to-city",
-      prompt: "Which city is this team from?",
+      prompt: `Which city is ${team.name} from?`,
       promptImageUrl: team.badgeUrl,
       options,
       correctOptionId: team.id,
