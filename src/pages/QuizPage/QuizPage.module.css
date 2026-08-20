@@ -1,0 +1,20 @@
+.page {
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.quizArea {
+  max-width: 640px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+}

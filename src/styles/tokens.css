@@ -1,0 +1,47 @@
+:root {
+  /* Colors - Light theme */
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --hover: #f1f5f9;
+  --shadow: rgba(0, 0, 0, 0.08);
+
+  --text: #1a202c;
+  --text-secondary: #64748b;
+
+  --accent: #2563eb;
+  --accent-bg: rgba(37, 99, 235, 0.08);
+
+  /* Typography */
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+  --mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --border: #334155;
+    --hover: #1e293b;
+    --shadow: rgba(0, 0, 0, 0.3);
+
+    --text: #f1f5f9;
+    --text-secondary: #94a3b8;
+
+    --accent: #3b82f6;
+    --accent-bg: rgba(59, 130, 246, 0.12);
+  }
+}
