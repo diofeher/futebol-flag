@@ -36,6 +36,7 @@ export function QuizPage() {
             current={quiz.currentIndex}
             total={quiz.totalQuestions}
             score={quiz.score}
+            onQuit={quiz.backToModes}
           />
           <QuestionCard
             question={quiz.currentQuestion}

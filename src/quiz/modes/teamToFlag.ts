@@ -23,7 +23,7 @@ export const teamToFlagMode: QuizModeDefinition = {
     return {
       id: generateId(),
       modeId: "team-to-flag",
-      prompt: `Which badge belongs to ${team.name}?`,
+      prompt: `Which badge belongs to ${team.name}? (${team.country})`,
       options,
       correctOptionId: team.id,
     };

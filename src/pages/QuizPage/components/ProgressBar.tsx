@@ -4,9 +4,10 @@ interface ProgressBarProps {
   current: number;
   total: number;
   score: number;
+  onQuit: () => void;
 }
 
-export function ProgressBar({ current, total, score }: ProgressBarProps) {
+export function ProgressBar({ current, total, score, onQuit }: ProgressBarProps) {
   const progress = ((current + 1) / total) * 100;
 
   return (
@@ -15,6 +16,9 @@ export function ProgressBar({ current, total, score }: ProgressBarProps) {
         <span className={styles.question}>
           Question {current + 1}/{total}
         </span>
+        <button className={styles.quitButton} onClick={onQuit} title="Quit quiz">
+          ✕
+        </button>
         <span className={styles.score}>
           Score: {score}/{current}
         </span>

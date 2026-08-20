@@ -228,7 +228,7 @@ const ALL_TEAMS: Team[] = [
   { id: "rennes", name: "Stade Rennais", shortName: "REN", city: "Rennes", state: "Brittany", country: "France", leagueId: "ligue-1", foundedYear: 1901, badgeUrl: badge("ligue-1", "rennes"), colors: ["#CC0000", "#000000"] },
 
   // ===== LIGA PORTUGAL =====
-  { id: "benfica", name: "SL Benfica", shortName: "BEN", city: "Lisbon", state: "Lisbon", country: "Portugal", leagueId: "liga-portugal", foundedYear: 1904, badgeUrl: badge("liga-portugal", "benfica"), colors: ["#CC0000", "#FFFFFF"] },
+  { id: "benfica", name: "SL Benfica", shortName: "BEN", city: "Lisbon", state: "Lisbon", country: "Portugal", leagueId: "liga-portugal", foundedYear: 1904, badgeUrl: badge("liga-portugal", "benfica", "png"), colors: ["#CC0000", "#FFFFFF"] },
   { id: "porto", name: "FC Porto", shortName: "POR", city: "Porto", state: "Porto", country: "Portugal", leagueId: "liga-portugal", foundedYear: 1893, badgeUrl: badge("liga-portugal", "porto", "png"), colors: ["#003DA5", "#FFFFFF"] },
   { id: "sporting-cp", name: "Sporting CP", shortName: "SCP", city: "Lisbon", state: "Lisbon", country: "Portugal", leagueId: "liga-portugal", foundedYear: 1906, badgeUrl: badge("liga-portugal", "sporting-cp"), colors: ["#006400", "#FFFFFF"] },
   { id: "braga", name: "SC Braga", shortName: "BRA", city: "Braga", state: "Braga", country: "Portugal", leagueId: "liga-portugal", foundedYear: 1921, badgeUrl: badge("liga-portugal", "braga"), colors: ["#CC0000", "#FFFFFF"] },

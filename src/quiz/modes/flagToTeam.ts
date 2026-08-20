@@ -22,6 +22,7 @@ export const flagToTeamMode: QuizModeDefinition = {
       promptImageUrl: team.badgeUrl,
       options,
       correctOptionId: team.id,
+      correctDetail: team.country,
     };
   },
 };
