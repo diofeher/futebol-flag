@@ -71,9 +71,12 @@ export function QuestionCard({
           <p className={styles.feedbackText}>
             {selectedOptionId === question.correctOptionId ? (
               <span className={styles.correctText}>
-                ✅ Correct!
+                ✅ Correct! —{" "}
+                <strong>
+                  {question.options.find((o) => o.id === question.correctOptionId)?.label}
+                </strong>
                 {question.correctDetail && (
-                  <> — <strong>{question.correctDetail}</strong></>
+                  <> ({question.correctDetail})</>
                 )}
               </span>
             ) : (
