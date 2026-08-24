@@ -2805,4 +2805,39 @@ const PLACEHOLDER_IDS = new Set([
   "auto-esporte", "nacional-patos", "esporte-patos", "picuiense", "pombal",
 ]);
 
-export const TEAMS = ALL_TEAMS.filter(t => !PLACEHOLDER_IDS.has(t.id));
+// League, cup, federation, and competition badges — not actual football clubs
+const NON_TEAM_IDS = new Set([
+  "1st-division", "2nd-division", "argentina-primera-division",
+  "belgian-cup", "belgian-pro-league", "challenger-pro-league",
+  "cypriot-first-division", "czech-republic-football-association",
+  "danish-cup", "dfb-german-football-association",
+  "efl-championship", "efl-cup", "efl-league-one", "efl-league-two",
+  "egyptian-premier-league", "emirates-fa-cup",
+  "english-football-league", "english-premier-league",
+  "fa-community-shield", "franz-beckenbauer-supercup",
+  "french-cup", "french-football-federation",
+  "hungarian-football-federation",
+  "i-league-2", "indian-super-league", "indonesian-super-league",
+  "iraq-stars-league", "israeli-premier-league", "isthmian-league",
+  "italian-super-cup",
+  "j-league", "j2-league", "j3-league", "jupiler-pro-league",
+  "k-league-1", "k-league-2", "knvb-cup",
+  "league-of-ireland", "league-of-ireland-first-division", "league-of-ireland-premier-division",
+  "national-league", "national-league-north", "national-league-south",
+  "northern-premier-league", "norwegian-first-division",
+  "pegadaian-championship", "polish-football-association", "portuguese-football-federation",
+  "russian-first-league", "russian-premier-league",
+  "saudi-arabian-football-federation", "saudi-first-division-league", "saudi-professional-league",
+  "scottish-championship", "scottish-football-association", "scottish-league-one", "scottish-league-two",
+  "southern-football-league-premier-central", "southern-football-league-premier-south",
+  "super-league-1", "super-league-2",
+  "swiss-challenge-league", "swiss-football-association", "swiss-football-league",
+  "turkish-football-federation", "ukrainian-premier-league",
+  "us-open-cup", "usl-championship", "usl-league-one", "usl-super-league",
+]);
+
+export const TEAMS = ALL_TEAMS.filter(t =>
+  !PLACEHOLDER_IDS.has(t.id) &&
+  !NON_TEAM_IDS.has(t.id) &&
+  !t.id.endsWith("-national-team")
+);
