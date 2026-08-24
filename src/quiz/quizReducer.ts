@@ -3,6 +3,7 @@ import type { QuizState, QuizAction } from "../types/quiz";
 export const initialQuizState: QuizState = {
   status: "mode-select",
   modeId: null,
+  difficultyId: null,
   questions: [],
   currentIndex: 0,
   selectedOptionId: null,
@@ -17,6 +18,7 @@ export function quizReducer(state: QuizState, action: QuizAction): QuizState {
         ...state,
         status: "in-progress",
         modeId: action.modeId,
+        difficultyId: action.difficultyId,
         questions: action.questions,
         currentIndex: 0,
         selectedOptionId: null,

@@ -1,0 +1,57 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.segmented {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.segment {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.75rem 0.5rem;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.segment:hover {
+  border-color: var(--accent);
+}
+
+.segment.active {
+  border-color: var(--accent);
+  background: var(--accent-bg);
+}
+
+.segmentLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.count {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+}

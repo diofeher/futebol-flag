@@ -1,11 +1,14 @@
 import type { QuizModeId } from "../../../types/quiz";
+import type { DifficultyId } from "../../../types/difficulty";
 import { useStatsContext } from "../../../context/StatsContext";
 import { getQuizMode } from "../../../quiz/registry";
+import { getDifficulty } from "../../../data/difficulties";
 import { QUESTIONS_PER_ROUND } from "../../../quiz/generateRound";
 import styles from "./ResultsSummary.module.css";
 
 interface ResultsSummaryProps {
   modeId: QuizModeId;
+  difficultyId: DifficultyId;
   score: number;
   total: number;
   onPlayAgain: () => void;
@@ -28,6 +31,7 @@ function getMessage(percentage: number): string {
 
 export function ResultsSummary({
   modeId,
+  difficultyId,
   score,
   total,
   onPlayAgain,
@@ -35,8 +39,9 @@ export function ResultsSummary({
 }: ResultsSummaryProps) {
   const { stats } = useStatsContext();
   const mode = getQuizMode(modeId);
+  const difficulty = getDifficulty(difficultyId);
   const percentage = total > 0 ? Math.round((score / total) * 100) : 0;
-  const modeStats = stats.modes[modeId];
+  const modeStats = stats.modes[difficultyId][modeId];
 
   return (
     <div className={styles.container}>
@@ -51,12 +56,14 @@ export function ResultsSummary({
       </div>
 
       <p className={styles.mode}>
-        {mode.emoji} {mode.label}
+        {mode.emoji} {mode.label} · {difficulty.emoji} {difficulty.label}
       </p>
 
       <div className={styles.statsGrid}>
         <div className={styles.stat}>
-          <span className={styles.statValue}>{modeStats.bestScore}/{QUESTIONS_PER_ROUND}</span>
+          <span className={styles.statValue}>
+            {modeStats.bestScore}/{QUESTIONS_PER_ROUND}
+          </span>
           <span className={styles.statLabel}>Best Score</span>
         </div>
         <div className={styles.stat}>

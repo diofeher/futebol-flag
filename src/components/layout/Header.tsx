@@ -10,9 +10,11 @@ interface HeaderProps {
 export function Header({ currentRoute, onNavigate }: HeaderProps) {
   const { stats } = useStatsContext();
 
-  // Find the best active streak across all modes
+  // Find the best active streak across all difficulties and modes
   const bestCurrentStreak = Math.max(
-    ...Object.values(stats.modes).map((m) => m.currentStreak),
+    ...Object.values(stats.modes).flatMap((diffModes) =>
+      Object.values(diffModes).map((m) => m.currentStreak)
+    ),
     0
   );
 

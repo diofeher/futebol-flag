@@ -1,6 +1,8 @@
 import { QUIZ_MODES } from "../../../quiz/registry";
 import { QUESTIONS_PER_ROUND } from "../../../quiz/generateRound";
 import { useStatsContext } from "../../../context/StatsContext";
+import { useDifficultyContext } from "../../../context/DifficultyContext";
+import { DifficultySelector } from "./DifficultySelector";
 import type { QuizModeId } from "../../../types/quiz";
 import styles from "./ModeSelector.module.css";
 
@@ -10,6 +12,7 @@ interface ModeSelectorProps {
 
 export function ModeSelector({ onSelect }: ModeSelectorProps) {
   const { stats } = useStatsContext();
+  const { difficulty } = useDifficultyContext();
 
   return (
     <div className={styles.container}>
@@ -18,9 +21,11 @@ export function ModeSelector({ onSelect }: ModeSelectorProps) {
         Test your knowledge of football team badges
       </p>
 
+      <DifficultySelector />
+
       <div className={styles.grid}>
         {QUIZ_MODES.map((mode) => {
-          const modeStats = stats.modes[mode.id];
+          const modeStats = stats.modes[difficulty][mode.id];
           return (
             <button
               key={mode.id}

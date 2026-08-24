@@ -1,3 +1,5 @@
+import type { DifficultyId } from "./difficulty";
+
 export type QuizModeId =
   | "flag-to-team"
   | "team-to-flag"
@@ -37,6 +39,7 @@ export type QuizStatus = "idle" | "mode-select" | "in-progress" | "finished";
 export interface QuizState {
   status: QuizStatus;
   modeId: QuizModeId | null;
+  difficultyId: DifficultyId | null;
   questions: QuizQuestion[];
   currentIndex: number;
   selectedOptionId: string | null;
@@ -45,7 +48,12 @@ export interface QuizState {
 }
 
 export type QuizAction =
-  | { type: "SELECT_MODE"; modeId: QuizModeId; questions: QuizQuestion[] }
+  | {
+      type: "SELECT_MODE";
+      modeId: QuizModeId;
+      difficultyId: DifficultyId;
+      questions: QuizQuestion[];
+    }
   | { type: "ANSWER"; optionId: string }
   | { type: "NEXT" }
   | { type: "RESTART" }

@@ -1,11 +1,17 @@
 import { createContext, useContext } from "react";
 import type { StatsState } from "../types/stats";
 import type { QuizModeId } from "../types/quiz";
+import type { DifficultyId } from "../types/difficulty";
 import { useStats } from "../hooks/useStats";
 
 interface StatsContextValue {
   stats: StatsState;
-  recordResult: (modeId: QuizModeId, score: number, total: number) => void;
+  recordResult: (
+    modeId: QuizModeId,
+    difficultyId: DifficultyId,
+    score: number,
+    total: number
+  ) => void;
   resetStats: () => void;
 }
 

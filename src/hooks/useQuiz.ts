@@ -1,18 +1,19 @@
 import { useReducer, useCallback } from "react";
 import type { QuizModeId } from "../types/quiz";
+import type { DifficultyId } from "../types/difficulty";
 import type { Team } from "../types/team";
 import { quizReducer, initialQuizState } from "../quiz/quizReducer";
 import { generateRound } from "../quiz/generateRound";
 
-export function useQuiz(teams: Team[]) {
+export function useQuiz(teams: Team[], difficultyId: DifficultyId) {
   const [state, dispatch] = useReducer(quizReducer, initialQuizState);
 
   const start = useCallback(
     (modeId: QuizModeId) => {
       const questions = generateRound(modeId, teams);
-      dispatch({ type: "SELECT_MODE", modeId, questions });
+      dispatch({ type: "SELECT_MODE", modeId, difficultyId, questions });
     },
-    [teams]
+    [teams, difficultyId]
   );
 
   const answer = useCallback((optionId: string) => {

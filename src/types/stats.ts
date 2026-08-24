@@ -1,4 +1,5 @@
 import type { QuizModeId } from "./quiz";
+import type { DifficultyId } from "./difficulty";
 
 export interface ModeStats {
   bestScore: number;
@@ -8,8 +9,9 @@ export interface ModeStats {
 }
 
 export interface StatsState {
+  schemaVersion: 2;
   totalGames: number;
-  modes: Record<QuizModeId, ModeStats>;
+  modes: Record<DifficultyId, Record<QuizModeId, ModeStats>>;
 }
 
 export const DEFAULT_MODE_STATS: ModeStats = {
@@ -19,12 +21,21 @@ export const DEFAULT_MODE_STATS: ModeStats = {
   bestStreak: 0,
 };
 
-export const DEFAULT_STATS: StatsState = {
-  totalGames: 0,
-  modes: {
+function createDefaultModes(): Record<QuizModeId, ModeStats> {
+  return {
     "flag-to-team": { ...DEFAULT_MODE_STATS },
     "team-to-flag": { ...DEFAULT_MODE_STATS },
     "flag-to-city": { ...DEFAULT_MODE_STATS },
     "founded-year": { ...DEFAULT_MODE_STATS },
+  };
+}
+
+export const DEFAULT_STATS: StatsState = {
+  schemaVersion: 2,
+  totalGames: 0,
+  modes: {
+    easy: createDefaultModes(),
+    medium: createDefaultModes(),
+    hard: createDefaultModes(),
   },
 };
